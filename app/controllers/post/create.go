@@ -13,7 +13,7 @@ func Create(ctx *fiber.Ctx) error {
         return ctx.Status(503).JSON(err)
     }
 
-    if err := database.Conn.Create(&post).Error; err != nil {
+    if err := database.Connection().Create(&post).Error; err != nil {
         return ctx.Status(503).JSON(err)
     }
 

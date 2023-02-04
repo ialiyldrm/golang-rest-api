@@ -9,6 +9,10 @@ func PostRoutes(app *fiber.App) {
 	// List All Posts
 	app.Get("/posts", post.Index)
 
+	// Show Post
+	app.Get("/posts/:id", post.Show)
+
+
 	// Create Post
-	app.Post("/post", post.Create)
+	app.Post("/posts", post.Create)
 }
