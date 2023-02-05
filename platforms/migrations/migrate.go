@@ -6,5 +6,6 @@ import (
 )
 
 func Migrate() {
-	database.Init().AutoMigrate(&models.Post{})	
+	
+	database.Connection().Set( "gorm:table_options" , "ENGINE=InnoDB" ).AutoMigrate(&models.Post{})	
 }
